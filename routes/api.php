@@ -17,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::post('/b2ccallback','Callbacks@processB2CRequestCallback');
+Route::post("/b2bcallback",'Callbacks@processB2BRequestCallback');
+Route::post('/c2bvalidation','Callbacks@processC2BRequestValidation');
+Route::post('/c2bconfirmation','Callbacks@processC2BRequestConfirmation');
+Route::post('/accountbalance','Callbacks@processAccountBalanceRequestCallback');
+Route::post('/reversalcallback','Callbacks@processReversalRequestCallBack');
+Route::post('/requeststkcallback','Callbacks@processSTKPushRequestCallback');
+Route::post('/querystkcallback','Callbacks@processSTKPushQueryRequestCallback');
+Route::post('/transstatcallback','Callbacks@processTransactionStatusRequestCallback');
